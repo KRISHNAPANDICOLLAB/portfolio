@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishnapandi M G - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #000;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .action-buttons {
+            max-width: 900px;
+            margin: 0 auto 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 12px 30px;
+            background: #000;
+            color: white;
+            border: 2px solid #000;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn:hover {
+            background: #333;
+            border-color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .action-btn i {
+            font-size: 1.1rem;
+        }
+
+        .action-btn.secondary {
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        .action-btn.secondary:hover {
+            background: #f5f5f5;
+            border-color: #000;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #000;
+        }
+
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #000;
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        .career-objective {
+            text-align: justify;
+            line-height: 1.6;
+            color: #000;
+            font-size: 0.9rem;
+        }
+
+        .experience-item,
+        .education-item,
+        .project-item {
+            margin-bottom: 18px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .company-name {
+            font-size: 1rem;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .duration {
+            color: #000;
+            font-size: 0.9rem;
+        }
+
+        .job-description,
+        .project-description {
+            margin-top: 8px;
+            padding-left: 18px;
+        }
+
+        .job-description li,
+        .project-description li {
+            margin-bottom: 5px;
+            color: #000;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category-title {
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 3px;
+            font-size: 0.95rem;
+        }
+
+        .skill-items {
+            color: #000;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .project-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .project-company {
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .project-description {
+            margin-top: 8px;
+            color: #000;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .project-tech {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #000;
+            font-size: 0.9rem;
+        }
+
+        .project-contribution {
+            margin-top: 8px;
+            padding-left: 18px;
+        }
+
+        .project-contribution strong {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .project-contribution li {
+            margin-bottom: 5px;
+            color: #000;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .education-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .education-institute {
+            color: #000;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .education-duration {
+            color: #000;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #fff;
+            }
+            .action-buttons {
+                display: none;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 15px;
+            }
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+            .experience-item,
+            .project-item {
+                page-break-inside: avoid;
+                margin-bottom: 12px;
+            }
+        }
+
+        @page {
+            margin: 1.5cm;
+            size: A4;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="action-buttons">
+        <button class="action-btn" onclick="window.print()">
+            <i class="fas fa-print"></i> Print / Save as PDF
+        </button>
+        <a href="index.html" class="action-btn secondary">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+    </div>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>KRISHNAPANDI M G</h1>
+            <div class="contact-info">
+                <a href="https://www.linkedin.com/in/krishnapandi-m-g" target="_blank">www.linkedin.com/in/krishnapandi-m-g</a>
+                <span>|</span>
+                <a href="mailto:krishnapandimg23@gmail.com">krishnapandimg23@gmail.com</a>
+                <span>|</span>
+                <span>Tamilnadu</span>
+                <span>|</span>
+                <a href="tel:+916383101337">+91 6383101337</a>
+            </div>
+        </div>
+
+        <!-- Career Objective -->
+        <div class="section">
+            <h2 class="section-title">Career Objective</h2>
+            <p class="career-objective">
+                Full-Stack Developer with 1+ years of professional experience in building scalable web applications 
+                using Java, Spring Boot, SQL, and front-end technologies. Skilled in back-end and front-end development, 
+                database management, and API integration. Successfully led a project as Team Lead (3 months), ensuring 
+                on-time delivery and effective team collaboration. Looking to contribute technical and leadership skills 
+                to deliver high-quality solutions in a dynamic environment.
+            </p>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Java Full-Stack Developer</div>
+                        <div class="company-name">Bornfire Innovation Pvt Ltd</div>
+                    </div>
+                    <div class="duration">April 2024 – Present (1+ Years)</div>
+                </div>
+                <ul class="job-description">
+                    <li>Designed, developed, and maintained RESTful APIs using Java & Spring Boot in STS.</li>
+                    <li>Built responsive and interactive front-end modules using HTML, CSS, JavaScript, and AJAX.</li>
+                    <li>Worked with MSSQL, Oracle DB, and MySQL, optimizing complex queries for performance.</li>
+                    <li>Actively involved in the entire SDLC – requirements, design, coding, testing, deployment, and support.</li>
+                    <li>Led a small team as Team Lead (3 months), managing task allocation, code reviews, and mentoring juniors to ensure quality and timely project delivery.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Languages:</div>
+                    <div class="skill-items">Java, HTML, CSS, JavaScript, Data Structures</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Databases:</div>
+                    <div class="skill-items">MySQL, Oracle SQL, MSSQL</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Frameworks:</div>
+                    <div class="skill-items">Spring Boot</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Expertise:</div>
+                    <div class="skill-items">Full Stack Development, DBMS</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Operating System:</div>
+                    <div class="skill-items">Windows</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Tools:</div>
+                    <div class="skill-items">Git, VS Code, Eclipse IDE, MySQL Workbench, Spring Tool Suite, Oracle DB</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Soft Skills:</div>
+                    <div class="skill-items">Team Management, Leadership, Problem Solving, Communication</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Asset Management</div>
+                <div class="project-company">Bornfire Innovation Pvt Ltd (2024)</div>
+                <div class="project-description">
+                    Developed an Asset Management System to track and manage organizational assets efficiently. 
+                    The system included features like asset registration, tracking, reporting, and depreciation 
+                    calculation to ensure accurate financial records.
+                </div>
+                <div class="project-tech">Technologies Used: Spring Boot, HTML, CSS, JavaScript, Ajax, OracleDB</div>
+                <div class="project-contribution">
+                    <strong>My Contribution:</strong>
+                    <ul>
+                        <li>Developed the Depreciation Module, implementing automated calculations (straight-line and reducing balance methods) and optimizing database queries to improve report generation speed by 25%.</li>
+                        <li>Integrated front-end components using AJAX/JavaScript with back-end APIs for real-time updates and implemented validation checks to ensure accurate asset life-cycle tracking and financial reporting.</li>
+                        <li>Supported operations across the project life-cycle.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Enterprise Resource Planning</div>
+                <div class="project-company">Bornfire Innovation Pvt Ltd (2024)</div>
+                <div class="project-description">
+                    This ERP system streamlines business operations by managing employee attendance, location assignments, 
+                    vendor and shop details, and sales tracking. The application enables managers to assign locations to 
+                    employees for order collection, while employees can punch in/out, visit assigned locations, and process sales. 
+                    The system ensures efficient workflow management with role-based access and real-time data synchronization.
+                </div>
+                <div class="project-tech">Technologies Used: Spring Boot, Java, JSON, MSSQL</div>
+                <div class="project-contribution">
+                    <strong>My Contribution:</strong>
+                    <ul>
+                        <li>Developed the complete backend for an ERP system using Spring Boot and MSSQL, integrating with an Android app.</li>
+                        <li>Built RESTful APIs for employee login, punch-in/punch-out, manager location assignment, vendor and shop management, and sales processing.</li>
+                        <li>Ensured secure authentication, data integrity, and optimized performance with efficient database queries and role-based access control.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-title">Bachelor of Engineering, Computer Science and Engineering</div>
+                <div class="education-institute">PSNA College of Engineering and Technology, Tamilnadu</div>
+                <div class="education-duration">July 2020 – May 2023</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Print functionality
+        function printResume() {
+            window.print();
+        }
+
+        // Keyboard shortcut for print (Ctrl+P or Cmd+P)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
+

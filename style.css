@@ -173,6 +173,8 @@ body {
     display: flex;
     gap: 1rem;
     margin-bottom: 2rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
 .btn {
@@ -203,6 +205,22 @@ body {
 .btn-secondary:hover {
     background: white;
     color: var(--primary-color);
+}
+
+.btn-resume {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border: 2px solid white;
+}
+
+.btn-resume:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-resume i {
+    margin-right: 0.5rem;
 }
 
 .social-links {
@@ -640,6 +658,172 @@ section {
     color: var(--text-light);
 }
 
+/* Certification Section */
+.certification {
+    background: var(--bg-light);
+}
+
+.certification-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.certification-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.certification-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.certification-details h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.certification-institute,
+.certification-duration {
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certification-institute i,
+.certification-duration i {
+    color: var(--primary-color);
+}
+
+.certification-description {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.certification-skills {
+    border-top: 2px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.certification-skills h4 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.cert-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.cert-skill-tag {
+    background: var(--bg-light);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.cert-skill-tag:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.certificate-image-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.certificate-title {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.certificate-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: var(--bg-light);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.certificate-image:hover {
+    transform: scale(1.02);
+}
+
+.certificate-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.certificate-fallback i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.certificate-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.certificate-note i {
+    color: var(--primary-color);
+}
+
 /* Contact Section */
 .contact {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -693,6 +877,17 @@ section {
 
 .contact-item i {
     font-size: 1.5rem;
+}
+
+.contact-resume-btn {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.contact-resume-btn:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* Footer */
@@ -762,6 +957,14 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .certification-content {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-wrapper {
+        min-height: 300px;
+    }
+
     .quick-info {
         flex-direction: column;
         gap: 1rem;
@@ -777,13 +980,31 @@ section {
     }
 }
 
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-buttons {
-        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.6rem;
     }
 
     .btn {
         text-align: center;
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+        flex: 1 1 auto;
+        min-width: 120px;
     }
 }
 

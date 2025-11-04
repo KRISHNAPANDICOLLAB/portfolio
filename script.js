@@ -79,7 +79,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.timeline-content, .project-card, .skill-category, .education-card');
+    const animateElements = document.querySelectorAll('.timeline-content, .project-card, .skill-category, .education-card, .certification-card, .certificate-image-container');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -126,6 +126,33 @@ if (profilePhoto) {
         if (imageFallback) {
             imageFallback.style.display = 'none';
         }
+    });
+}
+
+// Handle certificate image loading
+const certificateImage = document.getElementById('certificateImage');
+const certificateFallback = document.querySelector('.certificate-fallback');
+
+if (certificateImage) {
+    certificateImage.addEventListener('error', () => {
+        // If image fails to load, show the fallback
+        certificateImage.style.display = 'none';
+        if (certificateFallback) {
+            certificateFallback.style.display = 'flex';
+        }
+    });
+    
+    // If image loads successfully, hide the fallback
+    certificateImage.addEventListener('load', () => {
+        if (certificateFallback) {
+            certificateFallback.style.display = 'none';
+        }
+    });
+
+    // Add click to zoom functionality
+    certificateImage.addEventListener('click', () => {
+        // Open image in new tab for full view
+        window.open(certificateImage.src, '_blank');
     });
 }
 
